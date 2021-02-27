@@ -11,8 +11,8 @@
         <div class="navbar flex-layout justify-center items-center white-text text-uppercase">
             <div class="nav-items"><a href="./index.php">Home</a></div>
             <div class="nav-items"><a href="./Main.php">Disk Scheduling</a></div>
-            <div class="nav-items"><a href="">Page Replacement</a></div>
-            <div class="nav-items"><a href="">Scheduling</a></div>
+            <div class="nav-items"><a href="./pageReplacementAlgo.php">Page Replacement</a></div>
+            <div class="nav-items"><a href="./schedulingAlgo.php">Scheduling</a></div>
             <div class="nav-items"><a href="">Concurrency & Deadlock</a></div>
             <div class="nav-items"><a href="">about</a></div>
         </div>

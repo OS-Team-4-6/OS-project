@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="./css/algoContent.css" />
     <link rel="stylesheet" href="./css/tabs.css" />
     <link rel="stylesheet" href="./css/header.css" />
-    <title>Scheduling Algorithms</title>
+    <title>Page Replacement Algorithms</title>
     <script src="./js/tabs.js"></script>
 </head>
 
 <body>
-
     <?php
-    $title_1 = "Scheduling";
+    $title_1 = "Page Replacement";
     $title_2 = "Algorithms";
     $main_desc = "Ang Lorem Ipsum ay ginagamit na modelo ng industriya ng pagpriprint at pagtytypeset. Ang Lorem Ipsum ang naging
                     regular na modelo simula pa noong 1500s, noong may isang di kilalang manlilimbag and kumuha ng galley ng type at
@@ -28,125 +27,91 @@
     ?>
 
     <div class="tabs-container flex-layout ">
-        <div data-tab="fcfs" class="sa tab h4 active-tab flex-layout justify-center items-center text-uppercase">
-            FCFS
+        <div data-tab="fifo" class="pra tab h4 active-tab flex-layout justify-center items-center text-uppercase">
+            FIFO
         </div>
-        <div data-tab="sjf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            SJF
+        <div data-tab="lifo" class="pra tab h4 flex-layout justify-center items-center text-uppercase">
+            LIFO
         </div>
-        <div data-tab="ljf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            LJF
+        <div data-tab="lru" class="pra tab h4 flex-layout justify-center items-center text-uppercase">
+            LRU
         </div>
-        <div data-tab="rr" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            RR
+        <div data-tab="optimal" class="pra tab h4 flex-layout justify-center items-center text-uppercase">
+            Optimal
         </div>
-        <div data-tab="lrtf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            LRTF
-        </div>
-        <div data-tab="srtf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            SRTF
-        </div>
-        <div data-tab="priority" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            Priority
+        <div data-tab="random" class="pra tab h4 flex-layout justify-center items-center text-uppercase">
+            Random
         </div>
     </div>
 
-    <div id="fcfs" class="tab-view">
+    <div id="fifo" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>First Come First Serve</h1>
+            <h1>First In First Out</h1>
         </div>
         <br><br>
         <?php
-        $algoName = "FCFS";
+        $algoName = "FIFO";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
         include "algoContent.php";
         ?>
         <br><br>
-        <?php include "fcfs.php"; ?>
-        <br><br>
     </div>
-    <div id="sjf" class="tab-view">
+    <div id="lifo" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Shortest Job First</h1>
+            <h1>Last In First Out</h1>
         </div>
         <br><br>
         <?php
-        $algoName = "SJF";
+        $algoName = "LIFO";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
-        include "algoContent.php"; ?>
-        <br><br>
-        <?php include "sjf.php"; ?>
+        include "algoContent.php";
+        ?>
         <br><br>
     </div>
-    <div id="ljf" class="tab-view">
+    <div id="lru" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Longest Job First</h1>
+            <h1>least recently used</h1>
         </div>
         <br><br>
         <?php
-        $algoName = "LJF";
+        $algoName = "LRU";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
-        include "algoContent.php"; ?>
-        <br><br>
-        <?php include "ljf.php"; ?>
+        include "algoContent.php";
+        ?>
         <br><br>
     </div>
-    <div id="rr" class="tab-view">
+    <div id="optimal" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Round Robin</h1>
+            <h1>optimal</h1>
         </div>
         <br><br>
         <?php
-        $algoName = "RR";
+        $algoName = "Optimal";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
-        include "algoContent.php"; ?>
+        include "algoContent.php";
+        ?>
         <br><br>
     </div>
-    <div id="lrtf" class="tab-view">
+    <div id="random" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Least Running Time First</h1>
+            <h1>random</h1>
         </div>
         <br><br>
         <?php
-        $algoName = "LRTF";
+        $algoName = "Random";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
-        include "algoContent.php"; ?>
-        <br><br>
-    </div>
-    <div id="srtf" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Shortest Running Time First</h1>
-        </div>
-        <br><br>
-        <?php
-        $algoName = "SRTF";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
-
-        include "algoContent.php"; ?>
-        <br><br>
-    </div>
-    <div id="priority" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Priority</h1>
-        </div>
-        <br><br>
-        <?php
-        $algoName = "Priority";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
-
-        include "algoContent.php"; ?>
+        include "algoContent.php";
+        ?>
         <br><br>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

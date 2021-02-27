@@ -16,7 +16,7 @@
         <a href="./schedulingAlgo.php"><h4>Scheduling Algorithms</h4></a>
     </div>
     <div id="page-replacement" class="home-cards">
-        <a href=""><h4>Page Replacement Algorithms</h4></a>
+        <a href="./pageReplacementAlgo.php"><h4>Page Replacement Algorithms</h4></a>
     </div>
     <div id="concurrency-deadlock" class="home-cards">
         <a href=""><h4>Concurrency and Deadlock</h4></a>
