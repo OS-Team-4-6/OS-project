@@ -5,23 +5,24 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/header.css" />
 </head>
+
 <body>
-<div class="landing-screen">
-    <nav>
-        <div class="navbar flex-layout justify-center items-center white-text text-uppercase">
-            <div class="nav-items"><a href="./index.php">Home</a></div>
-            <div class="nav-items"><a href="./Main.php">Disk Scheduling</a></div>
-            <div class="nav-items"><a href="./pageReplacementAlgo.php">Page Replacement</a></div>
-            <div class="nav-items"><a href="./schedulingAlgo.php">Scheduling</a></div>
-            <div class="nav-items"><a href="">Concurrency & Deadlock</a></div>
-            <div class="nav-items"><a href="">about</a></div>
-        </div>
-    </nav>
-    <div class="header-container flex-layout">
-        <div class="header-info">
-            <h1 class="header-title bold-text"><?php echo $title_1; ?><br><?php echo $title_2; ?></h1>
-            <p class="header-para"><?php echo $main_desc; ?></p>
+    <div class="landing-screen">
+        <nav>
+            <div class="navbar flex-layout justify-center items-center white-text text-uppercase">
+                <div class="nav-items"><a href="./index.php">Home</a></div>
+                <div class="nav-items"><a href="./Main.php">Disk Scheduling</a></div>
+                <div class="nav-items"><a href="./pageReplacementAlgo.php">Page Replacement</a></div>
+                <div class="nav-items"><a href="./schedulingAlgo.php">Scheduling</a></div>
+                <div class="nav-items"><a href="">Concurrency & Deadlock</a></div>
+                <div class="nav-items"><a href="./developers.php">about</a></div>
+            </div>
+        </nav>
+        <div class="header-container flex-layout">
+            <div class="header-info">
+                <h1 class="header-title bold-text"><?php echo $title_1; ?><br><?php echo $title_2; ?></h1>
+                <p class="header-para"><?php echo $main_desc; ?></p>
+            </div>
         </div>
     </div>
-</div>
 </body>
