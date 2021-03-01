@@ -109,6 +109,8 @@
 
         include "algoContent.php"; ?>
         <br><br>
+        <?php include "rr.php"; ?>
+        <br><br>
     </div>
     <div id="lrtf" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
