@@ -61,6 +61,9 @@
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
+        $algoAdv = "";
+        $algoDisAdv = "";
+
         include "algoContent.php";
         ?>
         <br><br>
@@ -77,6 +80,9 @@
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
+        $algoAdv = "";
+        $algoDisAdv = "";
+
         include "algoContent.php"; ?>
         <br><br>
         <?php include "sjf.php"; ?>
@@ -91,6 +97,9 @@
         $algoName = "LJF";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+
+        $algoAdv = "";
+        $algoDisAdv = "";
 
         include "algoContent.php"; ?>
         <br><br>
@@ -107,6 +116,9 @@
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
+        $algoAdv = "";
+        $algoDisAdv = "";
+
         include "algoContent.php"; ?>
         <br><br>
         <?php include "rr.php"; ?>
@@ -122,6 +134,9 @@
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
+        $algoAdv = "";
+        $algoDisAdv = "";
+
         include "algoContent.php"; ?>
         <br><br>
     </div>
@@ -134,6 +149,9 @@
         $algoName = "SRTF";
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+
+        $algoAdv = "";
+        $algoDisAdv = "";
 
         include "algoContent.php"; ?>
         <br><br>
@@ -148,6 +166,9 @@
         $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
 
+        $algoAdv = "";
+        $algoDisAdv = "";
+        
         include "algoContent.php"; ?>
         <br><br>
     </div>

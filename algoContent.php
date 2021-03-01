@@ -20,16 +20,12 @@
         <div class="description" id="adv">
             <h2>Advantages</h2>
             <br>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-            </p>
+            <p><?php echo $algoAdv ?></p>
         </div>
         <div class="description" id="disadv">
             <h2>Disadvantages</h2>
             <br>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-            </p>
+            <p><?php echo $algoDisAdv ?></p>
         </div>
     </div>
 </body>
