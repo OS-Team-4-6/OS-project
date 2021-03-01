@@ -14,23 +14,6 @@ function rr(pt, at, bt, n, timeQuantum) {
         arrivalTime = [],
         burstTime = [];
 
-    // for (let i = 0; i < n; i++) {
-    //     for (let j = 0; j < n - (i + 1); j++) {
-    //         if (at[j] > at[j + 1]) {
-    //             temp = at[j];
-    //             at[j] = at[j + 1];
-    //             at[j + 1] = temp;
-
-    //             temp = bt[j];
-    //             bt[j] = bt[j + 1];
-    //             bt[j + 1] = temp;
-
-    //             temp_process = pt[j];
-    //             pt[j] = pt[j + 1];
-    //             pt[j + 1] = temp_process;
-    //         }
-    //     }
-    // }
     remain = n;
     for(count = 0; count < n; count++)
         rt[count] = bt[count];

@@ -8,7 +8,7 @@
 }
 
 .pra {
-    width: calc(100vw/5);
+    width: calc(100vw/6);
 }
 
 .dev {
@@ -27,7 +27,7 @@
     color: var(--white-color);
 }
 
-#sjf, #ljf, #rr, #lrtf, #srtf, #priority, #lifo, #lru, #optimal, #random, #scheduling, #pageRep, #concurrency {
+#sjf, #ljf, #rr, #lrtf, #srtf, #priority, #belady, #lifo, #lru, #optimal, #random, #scheduling, #pageRep, #concurrency {
     display: none;
 }
 

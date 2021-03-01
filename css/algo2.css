@@ -32,7 +32,7 @@
 }
 
 #table td, #table tr {
-    padding: 3%;
+    padding: 12px;
     width: max-content;
 }
 

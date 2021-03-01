@@ -29,6 +29,9 @@
         <div data-tab="fifo" class="pra tab h4 active-tab flex-layout justify-center items-center text-uppercase">
             FIFO
         </div>
+        <div data-tab="belady" class="pra tab h4 flex-layout justify-center items-center text-uppercase">
+            BELADY
+        </div>
         <div data-tab="lifo" class="pra tab h4 flex-layout justify-center items-center text-uppercase">
             LIFO
         </div>
@@ -58,6 +61,21 @@
         <br><br>
         <?php include "fifo.php"; ?>
     </div>
+    <div id="belady" class="tab-view">
+        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+            <h1>Belady</h1>
+        </div>
+        <br><br>
+        <?php
+        $algoName = "BELADY";
+        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+
+        include "algoContent.php";
+        ?>
+        <br><br>
+        <?php include "belady.php"; ?>
+    </div>
     <div id="lifo" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
             <h1>Last In First Out</h1>
@@ -71,6 +89,7 @@
         include "algoContent.php";
         ?>
         <br><br>
+        
     </div>
     <div id="lru" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
