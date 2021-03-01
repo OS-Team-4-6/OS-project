@@ -17,10 +17,7 @@
     <?php
     $title_1 = "Page Replacement";
     $title_2 = "Algorithms";
-    $main_desc = "Ang Lorem Ipsum ay ginagamit na modelo ng industriya ng pagpriprint at pagtytypeset. Ang Lorem Ipsum ang naging
-                    regular na modelo simula pa noong 1500s, noong may isang di kilalang manlilimbag and kumuha ng galley ng type at
-                    ginulo ang pagkaka-ayos nito upang makagawa ng libro ng mga type specimen. Nalagpasan nito hindi lang limang siglo, kundi nalagpasan din
-                    nito ang paglaganap ng electronic typesettin?";
+    $main_desc = "In a computer operating system that uses paging for virtual memory management, page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to disk, when a page of memory needs to be allocated. Page replacement happens when a requested page is not in memory (page fault) and a free page cannot be used to satisfy the allocation, either because there are none, or because the number of free pages is lower than some threshold.";
 
     include "header.php";
     ?>
@@ -53,11 +50,16 @@
         <br><br>
         <?php
         $algoName = "FIFO";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+        $algoDesc = "FIFO algorithm is the simplest page-replacement algorithm. The First-In, First-Out (FIFO) page replacement algorithm is a low-overhead algorithm that requires little bookkeeping on the part of the operating system. In other words, on a page fault, the frame that has been in memory the longest is replaced.
+        ";
 
-        $algoAdv = "";
-        $algoDisAdv = "";
+        $algoAdv = "FIFO is easy to understand.
+        <br>
+        It is very easy to implement.";
+        $algoDisAdv = "It is not very effective.
+        <br>
+        System needs to keep track of each frame.
+       ";
 
         include "algoContent.php";
         ?>
@@ -71,8 +73,10 @@
         <br><br>
         <?php
         $algoName = "BELADY";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+        $algoDesc = "Bélády’s anomaly is the name given to the phenomenon where increasing the number of page frames results in an increase in the number of page faults for a given memory access pattern.This phenomenon is commonly experienced in following page replacement algorithms:
+            First in first out (FIFO)
+            Second chance algorithm
+Random page replacement algorithm ";
 
         $algoAdv = "";
         $algoDisAdv = "";
@@ -89,11 +93,11 @@
         <br><br>
         <?php
         $algoName = "LIFO";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+        $algoDesc = "In LIFO (Last In, First Out) algorithm, newest jobs are serviced before the existing ones i.e. in order of requests that get serviced the job that is newest or last entered is serviced first and then the rest in the same order.";
 
-        $algoAdv = "";
-        $algoDisAdv = "";
+        $algoAdv = "Maximizes locality and resource utilization.";
+        $algoDisAdv = "Can seem a little unfair to other requests and if new requests keep coming in, it cause starvation to the      
+        old and existing ones.";
 
         include "algoContent.php";
         ?>
@@ -107,11 +111,16 @@
         <br><br>
         <?php
         $algoName = "LRU";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+        $algoDesc = "Least Recently Used (LRU) algorithm is a Greedy algorithm where the page to be replaced is least recently used. The idea is based on locality of reference, the least recently used page is not likely. This idea suggests a realizable algorithm: when a page fault occurs, throw out the page that has been unused for the longest time.        ";
 
-        $algoAdv = "";
-        $algoDisAdv = "";
+        $algoAdv = "It is open for full analysis.
+        <br>
+        In this, we replace the page which is least recently used, thus free from Belady’s Anomaly.<br>
+       Easy to choose page which has faulted and hasn’t been used for a long time.
+       ";
+        $algoDisAdv = "It requires additional Data Structure to be implemented.<br>
+        Hardware assistance is high.<br>
+        Performance tends to degenerate under many quite common reference patterns.";
 
         include "algoContent.php";
         ?>
@@ -124,11 +133,15 @@
         <br><br>
         <?php
         $algoName = "Optimal";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+        $algoDesc = " This Algorithms replaces the page which will not be referred for so long in future. Although it can not be practically Implementable but it can be used as a benchmark. Other algorithms are compared to this in terms of optimality, In other words in this algorithm , pages are replaced which would not be used for the longest duration of time in the future.
+        ";
 
-        $algoAdv = "";
-        $algoDisAdv = "";
+        $algoAdv = "Complexity is less and easy to implement.<br>
+        Assistance needed is low i.e Data Structure used are easy and light. 
+        ";
+        $algoDisAdv = "OPR is perfect, but not possible in practice as the operating system cannot know future requests.<br>
+        Error handling is tough.
+        ";
 
         include "algoContent.php";
         ?>
@@ -141,8 +154,7 @@
         <br><br>
         <?php
         $algoName = "Random";
-        $algoDesc = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus eum, ex corporis officia iste fuga natus molestias totam perferendis quas, animi esse placeat obcaecati fugit explicabo repellendus distinctio dolores.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corporis dignissimos aperiam necessitatibus omnis. Numquam quod iure excepturi in, nesciunt, iste dicta neque iusto perferendis, atque eligendi molestiae ad tempore!";
+        $algoDesc = "Random replacement algorithm replaces a random page in memory. This eliminates the overhead cost of tracking page references. ";
 
         $algoAdv = "";
         $algoDisAdv = "";
