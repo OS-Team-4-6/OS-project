@@ -19,7 +19,8 @@
 }
 
 .landing-screen {
-    background-image: url(../assets/images/about-background.jpg);
+    /* background-image: url(../assets/images/about-background.jpg); */
+    background-color: #000;
 }
 
 .header-container{
