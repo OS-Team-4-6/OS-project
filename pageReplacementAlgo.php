@@ -105,7 +105,7 @@ Random page replacement algorithm ";
         <br><br>
         <?php include "lifo.php"; ?>
         <br><br>
-        
+
     </div>
     <div id="lru" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
@@ -127,6 +127,8 @@ Random page replacement algorithm ";
 
         include "algoContent.php";
         ?>
+        <br><br>
+        <?php include "lru.php"; ?>
         <br><br>
     </div>
     <div id="optimal" class="tab-view">
