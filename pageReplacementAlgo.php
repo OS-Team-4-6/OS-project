@@ -103,6 +103,8 @@ Random page replacement algorithm ";
         include "algoContent.php";
         ?>
         <br><br>
+        <?php include "lifo.php"; ?>
+        <br><br>
         
     </div>
     <div id="lru" class="tab-view">
@@ -159,7 +161,7 @@ Random page replacement algorithm ";
 
         $algoAdv = "";
         $algoDisAdv = "";
-        
+
         include "algoContent.php";
         ?>
         <br><br>

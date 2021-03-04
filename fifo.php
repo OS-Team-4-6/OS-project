@@ -20,12 +20,12 @@
             <div>
                 <br>
                 <div class="flex-layout items-center justify-center">
-                    <table id="table" class="container text-center">
+                    <table id="table" class="table container text-center">
                     </table>
                 </div>
                 <br><br>
                 <div class="flex-layout items-center justify-center">
-                    <div id="summary" class=" flex-layout justify-center items-center bold-text text-uppercase"></div>
+                    <div id="summary" class="summary flex-layout justify-center items-center bold-text text-uppercase"></div>
                 </div>
             </div>
         </div>

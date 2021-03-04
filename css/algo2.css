@@ -27,19 +27,19 @@
     color: #fff;
 } */
 
-#table {
+.table {
     margin-top: 2%;
 }
 
-#table td, #table tr {
+.table td, .table tr {
     padding: 12px;
     width: max-content;
 }
 
-#summary > div {
+.summary > div {
     margin-right: 2%;
 }
 
-#summary {
+.summary {
     width: 100%;
 }
