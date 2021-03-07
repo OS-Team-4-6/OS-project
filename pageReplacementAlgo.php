@@ -151,6 +151,8 @@ Random page replacement algorithm ";
         include "algoContent.php";
         ?>
         <br><br>
+        <?php include "optimal.php"; ?>
+        <br><br>
     </div>
     <div id="random" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
