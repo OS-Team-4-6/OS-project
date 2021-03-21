@@ -169,6 +169,8 @@ Random page replacement algorithm ";
         include "algoContent.php";
         ?>
         <br><br>
+        <?php include "random.php"; ?>
+        <br><br>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
