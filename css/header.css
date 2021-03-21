@@ -3,6 +3,7 @@
     height: 12vh;
     width: 100vw;
     font-size: 15px;
+    /* background-color: aqua; */
 }
 
 .nav-items {
@@ -23,9 +24,18 @@
     background-color: #000;
 }
 
+.landing-screen-2 {
+    /* background-image: url(../assets/images/about-background.jpg); */
+    background-color: #000;
+}
+
 .header-container{
     color: #fff;
     margin: 5% 0 0 10%;
+}
+
+.header-container-2 {
+    height: 50vh;
 }
 
 .header-info {

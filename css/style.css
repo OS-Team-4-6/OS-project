@@ -204,6 +204,11 @@ h6, .h6 { font-size: 14px; }
     background-repeat: no-repeat;
 }
 
+.empty {
+    background-color: var(--secondary-color);
+    height: 25vh;
+}
+
 /* Media queries */
 @media screen and (max-width: 1200px) {
     h1, .h1 { font-size: 28px; }

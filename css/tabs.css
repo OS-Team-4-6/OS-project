@@ -32,7 +32,7 @@
     color: var(--white-color);
 }
 
-#sjf, #ljf, #rr, #lrtf, #srtf, #priority, #belady, #lifo, #lru, #optimal, #random, #scheduling, #pageRep, #concurrency {
+#sjf, #ljf, #rr, #lrtf, #srtf, #priority, #belady, #lifo, #lru, #optimal, #random, #disk, #pageRep, #concurrency {
     display: none;
 }
 
