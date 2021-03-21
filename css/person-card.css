@@ -8,6 +8,7 @@
 
 .person-card-img {
 	display: block;
+    object-fit: cover;
 	border: 0;
 	width: 95%;
     height: 40vh;
@@ -55,14 +56,14 @@
     }
 
     .person-card-img {
-        height: 30vh;
+        height: 40vh;
     }
 }
 
 @media screen and (min-width: 960px) {
 
     .person-card {
-        flex: 0 1 calc(24% - 3em);
+        flex: 0 1 calc(27% - 3em);
         margin-left: 4%;
         margin-right: 4%;
     }
