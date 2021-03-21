@@ -43,8 +43,8 @@
     .person-cards {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 2% 10%;
+        justify-content: center;
+        padding: 2% 5%;
     }
 
     .person-card {
@@ -62,9 +62,9 @@
 @media screen and (min-width: 960px) {
 
     .person-card {
-        flex: 0 1 calc(25% - 3em);
-        margin-left: 1em;
-        margin-right: 1em;
+        flex: 0 1 calc(24% - 3em);
+        margin-left: 4%;
+        margin-right: 4%;
     }
 }
 
