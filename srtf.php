@@ -11,17 +11,17 @@
 
     <body>
         <div id="srtf-container">
-            <div class="item">Process No.</div>
+            <div class="item">P No.</div>
             <div class="item">Arrival time</div>
             <div class="item">Burst time</div>
 
             <div class="item ans">Completion Time</div>
             <div class="item ans">Turn Around Time</div>
             <div class="item ans">Waiting Time</div>
-
         </div>
+        
         <div id="srtf-container_IO">
-            <div class="item">Process No.</div>
+            <div class="item">P No.</div>
             <div class="item">Total IO</div>
             <div class="item">Arrival time</div>
             <div class="item">Burst time</div>

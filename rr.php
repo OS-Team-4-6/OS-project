@@ -11,7 +11,7 @@
 
     <body>
         <div id="rr-container">
-            <div class="item">Process No.</div>
+            <div class="item">P No.</div>
             <div class="item">Arrival time</div>
             <div class="item">Burst time</div>
 
@@ -21,7 +21,7 @@
         </div>
 
         <div id="rr-container_IO">
-            <div class="item">Process No.</div>
+            <div class="item">P No.</div>
             <div class="item">Total IO</div>
             <div class="item">Arrival time</div>
             <div class="item">Burst time</div>

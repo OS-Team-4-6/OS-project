@@ -37,7 +37,7 @@
     <?php 
         $title_1 = "OS";
         $title_2 = "Virtual Lab";
-        $main_desc = "";
+        $main_desc = "The OS Virtual Lab contains a combination of various Operating System algorithms. It is comprised of 4 componenets namely 'Disk Shcheduling Algorithm','Shcheduling Algorithm', 'Page Replacement Algorithm' and 'Concurrency and Deadlock'. The lab is designed to provide a user friendly interface. It focuses on providing the user knowledge about OS algorithms along with their implementation. The objective of this lab is to help the users understand the internal working of an operating system via onine platform.";
         include 'header.php'; 
     ?>
 

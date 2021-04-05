@@ -8,22 +8,22 @@
         <link rel="stylesheet" href="./css/demo.css">
         <link rel="stylesheet" href="./css/style.css">
         <style>
-        #data {
+        #pr-data {
             display: grid;
             grid-template-columns: 120px 175px 175px 175px 175px 175px 175px;
         }
 
-        #container {
+        #pr-container {
             display: grid;
             grid-template-columns: 120px 175px 175px 175px 175px 175px 175px;
         }
 
-        #container_IO {
+        #pr-container_IO {
             display: none;
             grid-template-columns: 120px 100px 200px 200px 300px 200px 200px 200px;
         }
 
-        #data_IO {
+        #pr-data_IO {
             display: none;
             grid-template-columns: 120px 100px 200px 200px 300px 200px 200px 200px;
         }
