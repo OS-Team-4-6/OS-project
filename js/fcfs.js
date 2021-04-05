@@ -1,6 +1,6 @@
-let s = $("#data").html();
+let s = $("#fcfs-data").html();
 let s_IO=$("#data_IO").html();
-let s_animate = $("#animateAll").html();
+let s_animate = $("#fcfs-animateAll").html();
 let burst_IO= '<input type="number"class="cen_IO" placeholder="IO" style="width: 60px;"><input type="number" class="cen_IO" placeholder="BT" style="width:60px;">';
 
 $(document).ready(function () {
@@ -19,10 +19,10 @@ $(document).ready(function () {
         if(ans==true)
         {
             check=ans;
-            $("#container").css("display","none");
+            $("#fcfs-container").css("display","none");
             $("#container_IO").css("display","grid");
             $("#data_IO").css("display","grid");
-            $("#data").css("display","none");
+            $("#fcfs-data").css("display","none");
             $("#process").val(1);
             deleteOther();
             lst=1;
@@ -31,8 +31,8 @@ $(document).ready(function () {
         {
             check=ans;
             $("#container_IO").css("display","none");
-            $("#container").css("display","grid");
-            $("#data").css("display","grid");
+            $("#fcfs-container").css("display","grid");
+            $("#fcfs-data").css("display","grid");
             $("#data_IO").css("display","none");
             $("#process").val(1);
             deleteOther();
@@ -42,16 +42,16 @@ $(document).ready(function () {
 
     //when add buttton clicked then animation and data in the row are deleted.
     function deleteOther() {
-        $("#data").html(s);
+        $("#fcfs-data").html(s);
         $("#data_IO").html(s_IO);
-        $("#animateAll").html(s_animate);
+        $("#fcfs-animateAll").html(s_animate);
         makeHide();
     }
 
     //makevisible other column
     function makeVisible() {
         $(".ans").css("visibility", "visible");
-        $(".avg").css("visibility", "visible");
+        $(".average").css("visibility", "visible");
     }
 
     //Add process;
@@ -61,8 +61,8 @@ $(document).ready(function () {
         deleteOther();
         if(check==false){
             for(let i = 1; i < n; i++) {
-                $("#data").append(s);
-                $("#data .cen").eq(i * 3).text(i);
+                $("#fcfs-data").append(s);
+                $("#fcfs-data .cen").eq(i * 3).text(i);
                 lst=i+1;
             }
         }  
@@ -76,12 +76,12 @@ $(document).ready(function () {
         }
     });
     
-    $("#add_row").click(function(){
+    $("#fcfs-add_row").click(function(){
         let n=$("#process").val();
         $("#process").val(parseInt(n)+1);
         if(check==false){
-            $("#data").append(s);
-            $("#data .cen").eq(lst * 3).text(lst);
+            $("#fcfs-data").append(s);
+            $("#fcfs-data .cen").eq(lst * 3).text(lst);
         }
         else
         {
@@ -91,7 +91,7 @@ $(document).ready(function () {
         lst++;
     });
 
-    $("#delete_row").click(function(){
+    $("#fcfs-delete_row").click(function(){
         lst--;
         if(lst<0)
         {
@@ -100,12 +100,12 @@ $(document).ready(function () {
         }
         $("#process").val(lst);
         if(check==false){
-            $("#data").children(".cen").eq(lst*3+2).remove();
-            $("#data").children(".cen").eq(lst*3+1).remove();
-            $("#data").children(".cen").eq(lst*3).remove();
-            $("#data").children(".ans").eq(lst*3+2).remove();
-            $("#data").children(".ans").eq(lst*3+1).remove();
-            $("#data").children(".ans").eq(lst*3).remove();
+            $("#fcfs-data").children(".cen").eq(lst*3+2).remove();
+            $("#fcfs-data").children(".cen").eq(lst*3+1).remove();
+            $("#fcfs-data").children(".cen").eq(lst*3).remove();
+            $("#fcfs-data").children(".ans").eq(lst*3+2).remove();
+            $("#fcfs-data").children(".ans").eq(lst*3+1).remove();
+            $("#fcfs-data").children(".ans").eq(lst*3).remove();
         }
         else
         {
@@ -148,7 +148,7 @@ $(document).ready(function () {
         for (let j = 0; j < n; j++) {
             if (last < arrival_sort[j][0]) {
                 i++;
-                $("#animateAll").append(s_animate);
+                $("#fcfs-animateAll").append(s_animate);
                 $(".animation").eq(i).css("visibility", "visible");
                 $(".animation").eq(i).text("");
                 $(".animation").eq(i).css("background-color", "black");
@@ -164,7 +164,7 @@ $(document).ready(function () {
             }
             let cur = 50 * burst[arrival_sort[j][1]];
             i++;
-            $("#animateAll").append(s_animate);
+            $("#fcfs-animateAll").append(s_animate);
             $(".animation").eq(i).css("visibility", "visible");
             $(".animation").eq(i).text("P" + arrival_sort[j][1]);
             $(".start").eq(i).text(last);
@@ -180,7 +180,7 @@ $(document).ready(function () {
             last = Completion[arrival_sort[j][1]];
         }
         i++;
-        $("#animateAll").append(s_animate);
+        $("#fcfs-animateAll").append(s_animate);
         $(".start").eq(i).text(last);
     }
 
@@ -234,7 +234,7 @@ $(document).ready(function () {
             }
             else if (j==-1){
                 i++;
-                $("#animateAll").append(s_animate);
+                $("#fcfs-animateAll").append(s_animate);
                 $(".animation").eq(i).css("visibility", "visible");
                 $(".animation").eq(i).text("Waste");
                 $(".animation").eq(i).css("background-color", "black");
@@ -250,7 +250,7 @@ $(document).ready(function () {
             }
             let cur = 50 * j[0];
             i++;
-            $("#animateAll").append(s_animate);
+            $("#fcfs-animateAll").append(s_animate);
             $(".animation").eq(i).css("visibility", "visible");
             $(".animation").eq(i).text("P" + j[1]);
             $(".start").eq(i).text(last);
@@ -269,12 +269,12 @@ $(document).ready(function () {
                 Completion[j[1]]=last;
         }
         i++;
-        $("#animateAll").append(s_animate);
+        $("#fcfs-animateAll").append(s_animate);
         $(".start").eq(i).text(last);
     }
 
     //algorithm
-    $("#compute").click(function () {
+    $("#fcfs-compute").click(function () {
         
         makeAnimationHide();
 
@@ -283,7 +283,7 @@ $(document).ready(function () {
         let total_Burst=[];
         if(check==false)
         {   
-            let texts = $("#data .cen").map(function () {
+            let texts = $("#fcfs-data .cen").map(function () {
                 return $(this).val();
             }).get();
             console.log(texts);
@@ -429,9 +429,9 @@ $(document).ready(function () {
         var avg_tat=0,avg_wat=0;
         if(check==false){
             for (let i = 0, j = 0; i < 3 * n; i += 3, j++) {
-                $("#data .ans").eq(i).text(Completion[j]);
-                $("#data .ans").eq(i + 1).text(tat[j]);
-                $("#data .ans").eq(i + 2).text(wt[j]);
+                $("#fcfs-data .ans").eq(i).text(Completion[j]);
+                $("#fcfs-data .ans").eq(i + 1).text(tat[j]);
+                $("#fcfs-data .ans").eq(i + 2).text(wt[j]);
                 avg_tat+=tat[j];
                 avg_wat+=wt[j];
             }
@@ -447,8 +447,8 @@ $(document).ready(function () {
             }
         }
 
-        $("#avg_tat").text(Math.round(avg_tat/n*100)/100);
-        $("#avg_wat").text(Math.round(avg_wat/n*100)/100);
+        $("#fcfs-avg_tat").text(Math.round(avg_tat/n*100)/100);
+        $("#fcfs-avg_wat").text(Math.round(avg_wat/n*100)/100);
 
         makeVisible();
 
@@ -468,12 +468,12 @@ $(document).ready(function () {
     function makeHide() {
         $(".cen").val("");
         $(".ans").css("visibility", "hidden");
-        $(".avg").css("visibility", "hidden");
+        $(".average").css("visibility", "hidden");
         makeAnimationHide();
         // $(".animation").css("visibility","hidden");
     }
 
     //reset the button
-    $("#reset").click(makeHide);
+    $("#fcfs-reset").click(makeHide);
     
 });

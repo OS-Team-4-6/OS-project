@@ -1,10 +1,10 @@
-#container, #sjf-container, #ljf-container, #rr-container, #lrtf-container, #srtf-container, #pr-container {
+#container, #fcfs-container, #sjf-container, #ljf-container, #rr-container, #lrtf-container, #srtf-container, #pr-container {
     display: grid;
-    grid-template-columns: 120px 245px 245px 245px 245px 245px;
+    grid-template-columns: 120px 175px 175px 175px 175px 175px;
     color: var(--black-color);
 }
 
-#animateAll, #sjf-animateAll, #ljf-animateAll, #rr-animateAll, #lrtf-animateAll, #srtf-animateAll, #pr-animateAll{
+#animateAll, #fcfs-animateAll, #sjf-animateAll, #ljf-animateAll, #rr-animateAll, #lrtf-animateAll, #srtf-animateAll, #pr-animateAll{
     display: flex;
     /* flex-wrap: wrap; */
 }
@@ -36,9 +36,9 @@
     justify-content: center;
 }
 
-#data, #sjf-data, #ljf-data, #rr-data, #lrtf-data, #srtf-data, #pr-data{
+#data, #fcfs-data, #sjf-data, #ljf-data, #rr-data, #lrtf-data, #srtf-data, #pr-data{
     display: grid;
-    grid-template-columns: 120px 245px 245px 245px 245px 245px;
+    grid-template-columns: 120px 175px 175px 175px 175px 175px;
     color: var(--black-color);
 }
 
@@ -112,7 +112,7 @@
     width: 130px;
     margin: 10px;
 }
-.avg
+.average
 {
     font-size: 19px;
     visibility: hidden; 

@@ -7,13 +7,13 @@
     <title>First come first serve</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/demo.css">
-    <link rel="stylesheet" href="./css/respo.css">
+    <!-- <link rel="stylesheet" href="./css/respo.css"> -->
 </head>
 
 <body>
     <section class="sa-algo-container">
         <div class="sa-containers">
-            <div id="container">
+            <div id="fcfs-container">
                 <div class="item">P No.</div>
                 <div class="item">Arrival time</div>
                 <div class="item">Burst time</div>
@@ -34,7 +34,7 @@
                 <div class="item ans">Waiting Time</div>
             </div>
             
-            <div id="data">
+            <div id="fcfs-data">
                 <label class="cen">0</label>
                 <input type="number" class="cen">
                 <input type="number" class="cen">
@@ -55,26 +55,26 @@
                 <label class="ans"></label>
             </div>
             <br>
-            <button id="add_row" class="btn">Add Row</button>
-            <button id="delete_row" class="btn">Delete Row</button>
-            <button id="compute" class="btn">Compute</button>
-            <button id="reset" class="btn">Reset</button>
+            <button id="fcfs-add_row" class="btn">Add Row</button>
+            <button id="fcfs-delete_row" class="btn">Delete Row</button>
+            <button id="fcfs-compute" class="btn">Compute</button>
+            <button id="fcfs-reset" class="btn">Reset</button>
             <br><br>
 
             <!-- <button id="animate" class="btn">Animate</button> -->
 
-            <div id="animateAll">
+            <div id="fcfs-animateAll">
                 <label class="start"></label>
                 <div class="animation black-text">
                     <label class="process_animate">p0</label>
                 </div>
             </div>
 
-            <div class="avg black-text">
+            <div class="average black-text">
                 <span class="b">Average Turn Around Time </span>
-                <label class="a" id="avg_tat"></label>
+                <label class="a" id="fcfs-avg_tat"></label>
                 <span class="b">Average Waiting Time </span>
-                <label class="a" id="avg_wat"></label>
+                <label class="a" id="fcfs-avg_wat"></label>
             </div>
         </div>
     </section>

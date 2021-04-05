@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Longest Remaining Time First</title>
-        <link rel="stylesheet" href="./css/demo.css">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Remaining Time First</title>
+    <link rel="stylesheet" href="./css/demo.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
 
-    <body>
-        <div id="lrtf-container">
-            <div class="item">P No.</div>
-            <div class="item">Arrival time</div>
-            <div class="item">Burst time</div>
+<body>
+    <section class="sa-algo-container">
+        <div class="algo-containers">
+            <div id="lrtf-container">
+                <div class="item">P No.</div>
+                <div class="item">Arrival time</div>
+                <div class="item">Burst time</div>
 
-            <div class="item ans">Completion Time</div>
-            <div class=" item ans">Turn Around Time</div>
-            <div class="item ans">Waiting Time</div>
+                <div class="item ans">Completion Time</div>
+                <div class=" item ans">Turn Around Time</div>
+                <div class="item ans">Waiting Time</div>
 
-        </div>
+            </div>
 
-        <div id="lrtf-container_IO">
+            <div id="lrtf-container_IO">
                 <div class="item">P No.</div>
                 <div class="item">Total IO</div>
                 <div class="item">Arrival time</div>
@@ -29,7 +31,6 @@
                 <div class="item ans">Completion Time</div>
                 <div class="item ans">Turn Around Time</div>
                 <div class="item ans">Waiting Time</div>
-
             </div>
 
             <div id="lrtf-data">
@@ -69,13 +70,15 @@
                 </div>
             </div>
 
-            <div class="avg black-text">
+            <div class="average black-text">
                 <span class="b">Average Turn Around Time </span>
                 <label class="a" id="lrtf-avg_tat"></label>
                 <span class="b">Average Waiting Time </span>
                 <label class="a" id="lrtf-avg_wat"></label>
             </div>
-    </body>
-    <script type="module" src="./js/lrtf.js"></script>
+        </div>
+    </section>
+</body>
+<script type="module" src="./js/lrtf.js"></script>
 
 </html>

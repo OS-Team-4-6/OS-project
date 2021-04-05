@@ -70,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="avg black-text">
+            <div class="average black-text">
                 <span class="b">Average Turn Around Time </span>
                 <label class="a" id="sjf-avg_tat"></label>
                 <span class="b">Average Waiting Time </span>

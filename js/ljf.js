@@ -1,6 +1,6 @@
 let s = $("#ljf-data").html();
 let s_IO = $("#ljf-data_IO").html();
-let s_animate = $("ljf-#animateAll").html();
+let s_animate = $("#ljf-animateAll").html();
 let burst_IO =
   '<input type="number"class="cen_IO" placeholder="IO" style="width: 60px;"><input type="number" class="cen_IO" placeholder="BT" style="width:60px;">';
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
   //makevisible other column
   function makeVisible() {
     $(".ans").css("visibility", "visible");
-    $(".avg").css("visibility", "visible");
+    $(".average").css("visibility", "visible");
   }
 
   //Add process;
@@ -618,7 +618,7 @@ $(document).ready(function () {
   function makeHide() {
     $(".cen").val("");
     $(".ans").css("visibility", "hidden");
-    $(".avg").css("visibility", "hidden");
+    $(".average").css("visibility", "hidden");
     makeAnimationHide();
     // $(".animation").css("visibility","hidden");
   }

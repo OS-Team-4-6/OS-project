@@ -29,6 +29,10 @@
             .person-cards {
                 justify-content: space-between;
             }
+
+            .person-card-name {
+                cursor: default;
+            }
         }
     </style>
 

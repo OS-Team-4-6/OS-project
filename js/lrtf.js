@@ -54,7 +54,7 @@ $(document).ready(function () {
   //makevisible other column
   function makeVisible() {
     $(".ans").css("visibility", "visible");
-    $(".avg").css("visibility", "visible");
+    $(".average").css("visibility", "visible");
   }
 
   //Add process;
@@ -650,7 +650,7 @@ $(document).ready(function () {
   function makeHide() {
     $(".cen").val("");
     $(".ans").css("visibility", "hidden");
-    $(".avg").css("visibility", "hidden");
+    $(".average").css("visibility", "hidden");
     makeAnimationHide();
     // $(".animation").css("visibility","hidden");
   }
