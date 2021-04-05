@@ -163,8 +163,9 @@ Random page replacement algorithm ";
         $algoName = "Random";
         $algoDesc = "Random replacement algorithm replaces a random page in memory. This eliminates the overhead cost of tracking page references. ";
 
-        $algoAdv = "";
-        $algoDisAdv = "";
+        $algoAdv = "Pages are replaced randomly and hence it is extremely easy to execute this algorithm.<br>Works well when there is tons of free memory and when there is no free memory.
+";
+        $algoDisAdv = "It can easily make bad choices by swapping out pages right before they are needed.<br>Random page replacement algorithm suffers from belady’s anomaly which results in increasing number of page faults";
 
         include "algoContent.php";
         ?>

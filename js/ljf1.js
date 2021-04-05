@@ -23,38 +23,38 @@ function LJF(num, mat) {
   mat[0][5] = mat[0][3] - mat[0][1];
   mat[0][4] = mat[0][5] - mat[0][2];
 
-  let ctCompare = mat[0][3];
-  for (let i = 1; i <= num; i++) {
-    if (ctCompare >= mat[i][1]) {
-      mat2[a][b] = mat[i][0];
-      b += 1;
-      mat2[a][b] = mat[i][2];
-      a += 1;
-      b -= 1;
-    }
-    for (let i = 0; i < mat2.length; i++) {
-      let maxBT = Math.max(...mat2[i][1]);
-    }
-    console.log(maxBT);
-  }
-  // for (let i = 1; i < num; i++) {
-  //   temp = mat[i - 1][3];
-  //   let low = mat[i][2];
-  //   for (let j = i; j < num; j++) {
-  //     if (temp >= mat[j][1] && low >= mat[j][2]) {
-  //       low = mat[j][2];
-  //       val = j;
-  //     }
+  // let ctCompare = mat[0][3];
+  // for (let i = 1; i <= num; i++) {
+  //   if (ctCompare >= mat[i][1]) {
+  //     mat2[a][b] = mat[i][0];
+  //     b += 1;
+  //     mat2[a][b] = mat[i][2];
+  //     a += 1;
+  //     b -= 1;
   //   }
-  //   mat[val][3] = temp + mat[val][2];
-  //   mat[val][5] = mat[val][3] - mat[val][1];
-  //   mat[val][4] = mat[val][5] - mat[val][2];
-  //   for (let k = 0; k < 6; k++) {
-  //     let tem = mat[val][k];
-  //     mat[val][k] = mat[i][k];
-  //     mat[i][k] = tem;
+  //   for (let i = 0; i < mat2.length; i++) {
+  //     let maxBT = Math.max(...mat2[i][1]);
   //   }
+  //   console.log(maxBT);
   // }
+  for (let i = 1; i < num; i++) {
+    temp = mat[i - 1][3];
+    let low = mat[i][2];
+    for (let j = i; j < num; j++) {
+      if (temp >= mat[j][1] && low >= mat[j][2]) {
+        low = mat[j][2];
+        val = j;
+      }
+    }
+    mat[val][3] = temp + mat[val][2];
+    mat[val][5] = mat[val][3] - mat[val][1];
+    mat[val][4] = mat[val][5] - mat[val][2];
+    for (let k = 0; k < 6; k++) {
+      let tem = mat[val][k];
+      mat[val][k] = mat[i][k];
+      mat[i][k] = tem;
+    }
+  }
   //BackEnd Ends here
 
   var Table = document.getElementById("ljfTable");

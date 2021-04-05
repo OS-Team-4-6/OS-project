@@ -14,14 +14,6 @@
 </head>
 
 <body>
-    <!-- <?php
-            $title_1 = "";
-            $title_2 = "Developers";
-            $main_desc = "";
-
-            include "header.php";
-            ?> -->
-
     <div class="landing-screen-2">
         <nav>
             <div class="navbar flex-layout justify-center items-center white-text text-uppercase">
