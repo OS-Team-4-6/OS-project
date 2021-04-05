@@ -17,6 +17,19 @@
         .person-card-img {
             width: 100%;
         }
+
+        @media screen and (min-width: 960px) {
+
+            .index {
+                flex: 0 1 calc(25% - 2em);
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .person-cards {
+                justify-content: space-between;
+            }
+        }
     </style>
 
 </head>
@@ -37,7 +50,7 @@
                 </div>
             </a>
             <div class="person-card-body">
-                <h3 class="person-card-name text-center">Disk Scheduling<br>Algorithms</h3>
+                <h4 class="person-card-name text-center">Disk Scheduling<br>Algorithms</h4>
             </div>
         </div>
 
@@ -48,7 +61,7 @@
                 </div>
             </a>
             <div class="person-card-body">
-                <h3 class="person-card-name text-center">Scheduling Algorithms</h3>
+                <h4 class="person-card-name text-center">Scheduling Algorithms</h4>
             </div>
         </div>
 
@@ -59,7 +72,7 @@
                 </div>
             </a>
             <div class="person-card-body">
-                <h3 class="person-card-name text-center">Page Replacement<br>Algorithms</h3>
+                <h4 class="person-card-name text-center">Page Replacement<br>Algorithms</h4>
             </div>
         </div>
 
@@ -70,7 +83,7 @@
                 </div>
             </a>
             <div class="person-card-body">
-                <h3 class="person-card-name text-center">Concurrency &<br>Deadlock Algorithms</h3>
+                <h4 class="person-card-name text-center">Concurrency &<br>Deadlock Algorithms</h4>
             </div>
         </div>
 
