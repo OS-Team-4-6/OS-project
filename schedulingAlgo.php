@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/algo.css">
-    <link rel="stylesheet" href="./css/algoContent.css" />
-    <link rel="stylesheet" href="./css/tabs.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <title>Scheduling Algorithms</title>
-    <script src="./js/tabs.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/algo.css">
+        <link rel="stylesheet" href="./css/algoContent.css" />
+        <link rel="stylesheet" href="./css/tabs.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <title>Scheduling Algorithms</title>
+        <script src="./js/tabs.js"></script>
+    </head>
 
-<body>
-    <?php
+    <body>
+        <?php
     $title_1 = "Scheduling";
     $title_2 = "Algorithms";
     $main_desc = "CPU Scheduling is a process of determining which process will own CPU for execution while another process is on hold. The main task of CPU scheduling is to make sure that whenever the CPU remains idle, the OS at least select one of the processes available in the ready queue for execution. The selection process will be carried out by the CPU scheduler.It selects one of the processes in memory that are ready for execution.";
@@ -23,36 +23,36 @@
     include "header.php";
     ?>
 
-    <div class="tabs-container flex-layout ">
-        <div data-tab="fcfs" class="sa tab h4 active-tab flex-layout justify-center items-center text-uppercase">
-            FCFS
+        <div class="tabs-container flex-layout ">
+            <div data-tab="fcfs" class="sa tab h4 active-tab flex-layout justify-center items-center text-uppercase">
+                FCFS
+            </div>
+            <div data-tab="sjf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
+                SJF
+            </div>
+            <div data-tab="ljf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
+                LJF
+            </div>
+            <div data-tab="rr" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
+                RR
+            </div>
+            <div data-tab="lrtf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
+                LRTF
+            </div>
+            <div data-tab="srtf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
+                SRTF
+            </div>
+            <div data-tab="priority" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
+                Priority
+            </div>
         </div>
-        <div data-tab="sjf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            SJF
-        </div>
-        <div data-tab="ljf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            LJF
-        </div>
-        <div data-tab="rr" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            RR
-        </div>
-        <div data-tab="lrtf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            LRTF
-        </div>
-        <div data-tab="srtf" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            SRTF
-        </div>
-        <div data-tab="priority" class="sa tab h4 flex-layout justify-center items-center text-uppercase">
-            Priority
-        </div>
-    </div>
 
-    <div id="fcfs" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>First Come First Serve</h1>
-        </div>
-        <br><br>
-        <?php
+        <div id="fcfs" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>First Come First Serve</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "FCFS";
         $algoDesc = "In the FCFS scheduling algorithm, the job that arrived first in the ready queue is allocated to the CPU and then the job that came second and so on. We can say that the ready queue acts as a FIFO (First In First Out) queue thus the arriving jobs/processes are placed at the end of the queue.
         FCFS is a non-preemptive scheduling algorithm as a process holds the CPU until it either terminates or performs I/O. Thus, if a longer job has been assigned to the CPU then many shorter jobs after it will have to wait. This algorithm is used in most of the batch operating systems.
@@ -73,16 +73,16 @@
         ";
 
         include "algoContent.php"; ?>
-        <br><br>
-        <?php include "FCFS.php"; ?>
-        <br><br>
-    </div>
-    <div id="sjf" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Shortest Job First</h1>
+            <br><br>
+            <?php include "FCFS.php"; ?>
+            <br><br>
         </div>
-        <br><br>
-        <?php
+        <div id="sjf" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>Shortest Job First</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "SJF";
         $algoDesc = " Is an algorithm in which the process having the smallest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution. The full form of SJF is Shortest Job First. ";
 
@@ -108,16 +108,16 @@
         ";
 
         include "algoContent.php"; ?>
-        <br><br>
-        <?php include "SJF.php"; ?>
-        <br><br>
-    </div>
-    <div id="ljf" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Longest Job First</h1>
+            <br><br>
+            <?php include "SJF.php"; ?>
+            <br><br>
         </div>
-        <br><br>
-        <?php
+        <div id="ljf" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>Longest Job First</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "LJF";
         $algoDesc = " In Longest Job First the process having the largest burst time is the next to be executed. It is non-pre-emptive so when a process starts its execution, it cannot be interrupted and any other process will be executed once the assigned process has completed being processed and has been terminated.
         ";
@@ -130,16 +130,16 @@
        ";
 
         include "algoContent.php"; ?>
-        <br><br>
-        <?php include "ljf.php"; ?>
-        <br><br>
-    </div>
-    <div id="rr" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Round Robin</h1>
+            <br><br>
+            <?php include "ljf.php"; ?>
+            <br><br>
         </div>
-        <br><br>
-        <?php
+        <div id="rr" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>Round Robin</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "RR";
         $algoDesc = "Round Robin Scheduling is a preemptive process in which the CPU is assigned to the process on the basis of FCFS (First Come First Serve) for a fixed amount of time. The fixed amount of time is known as a time quantum or a time slice. Once this time quantum ends, the running process is preempted and sent to the ready queue and the processor is assigned to the next arrived process.
         ";
@@ -157,16 +157,16 @@
        ";
 
         include "algoContent.php"; ?>
-        <br><br>
-        <?php include "rr.php"; ?>
-        <br><br>
-    </div>
-    <div id="lrtf" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Least Running Time First</h1>
+            <br><br>
+            <?php include "rr.php"; ?>
+            <br><br>
         </div>
-        <br><br>
-        <?php
+        <div id="lrtf" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>Least Running Time First</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "LRTF";
         $algoDesc = "Longest Remaining Time First is a scheduling algorithm used by the operating system to schedule the incoming processes so that they can be executed in a systematic way. In this algorithm, we find the process with the maximum remaining time and then process it. We check for the maximum remaining time after some interval of time (say 1 unit each) to check if another process having more Burst Time arrived up to that time.
         ";
@@ -180,14 +180,16 @@
         ";
 
         include "algoContent.php"; ?>
-        <br><br>
-    </div>
-    <div id="srtf" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Shortest Running Time First</h1>
+            <br><br>
+            <?php include "lrtf.php"; ?>
+            <br><br>
         </div>
-        <br><br>
-        <?php
+        <div id="srtf" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>Shortest Running Time First</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "SRTF";
         $algoDesc = "Shortest Remaining Time First (SRTF) is the preemptive version of SJF scheduling, where the processor is allocated to the job closest to completion. Here a short-term scheduler schedules the process with the least remaining burst time among available processes and running process. Once all the processes are in the ready queue, No preemption will be done and the algorithm will work as SJF scheduling.
         ";
@@ -201,14 +203,16 @@
         ";
 
         include "algoContent.php"; ?>
-        <br><br>
-    </div>
-    <div id="priority" class="tab-view">
-        <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
-            <h1>Priority</h1>
+            <br><br>
+            <?php include "srtf.php"; ?>
+            <br><br>
         </div>
-        <br><br>
-        <?php
+        <div id="priority" class="tab-view">
+            <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
+                <h1>Priority</h1>
+            </div>
+            <br><br>
+            <?php
         $algoName = "Priority";
         $algoDesc = "Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority. The processes with higher priority should be carried out first, whereas jobs with equal priorities are carried out on a round-robin or FCFS basis.
         ";
@@ -219,13 +223,17 @@
         $algoDisAdv = "If the system eventually crashes, all low priority processes get lost.<br>
         If high priority processes take lots of CPU time, then the lower priority processes may starve and will be postponed for an indefinite time.
         ";
-        
+
         include "algoContent.php"; ?>
-        <br><br>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>
-</body>
+            <br><br>
+            <?php include "pr.php"; ?>
+            <br><br>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+            integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous">
+        </script>
+    </body>
 
 </html>
