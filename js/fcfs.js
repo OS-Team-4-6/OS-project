@@ -1,224 +1,479 @@
-let qu = 0;
+let s = $("#data").html();
+let s_IO=$("#data_IO").html();
+let s_animate = $("#animateAll").html();
+let burst_IO= '<input type="number"class="cen_IO" placeholder="IO" style="width: 60px;"><input type="number" class="cen_IO" placeholder="BT" style="width:60px;">';
 
-function FCFS(processIDs, arrivalTime, burstTime) {
-    let output = 'P\tAT\tBT\tCT\tTT\tWT\n',
-        objCollection = [],
-        PID = [],
-        AT = [],
-        BT = [],
-        completion,
-        ct = [],
-        turnaround,
-        tt = [],
-        waiting,
-        wt = [],
-        att = [],
-        awt = [];
+$(document).ready(function () {
 
-    qu = parseInt(document.getElementById("at1").value);
-
-    //Making an object to be sorted later.
-    for (var x = 0; x < arrivalTime.length; x++)
-        objCollection.push({ A: arrivalTime[x], B: burstTime[x], C: processIDs[x] });
-
-    //Sorting begins with its corresponding Arrival Time and Burst Time
-    //No interchanging of partner happens
-    objCollection.sort(function (a, b) {
-        return a.A - b.A;
+    let arrival = [];
+    let burst = [];
+    let Completion = [];
+    let tat = [];
+    let wt = [];
+    let arrival_sort=[];
+    let check=false;
+    let IO_time=[];
+    //toggle of IO
+    $("#check").on('change',function(){
+        let ans=this.checked;
+        if(ans==true)
+        {
+            check=ans;
+            $("#container").css("display","none");
+            $("#container_IO").css("display","grid");
+            $("#data_IO").css("display","grid");
+            $("#data").css("display","none");
+            $("#process").val(1);
+            deleteOther();
+            lst=1;
+        }
+        else
+        {
+            check=ans;
+            $("#container_IO").css("display","none");
+            $("#container").css("display","grid");
+            $("#data").css("display","grid");
+            $("#data_IO").css("display","none");
+            $("#process").val(1);
+            deleteOther();
+            lst=1;
+        }
     });
 
-    for (var x = 0; x < (arrivalTime.length - 1); x++) {
-        if (objCollection[x].A == objCollection[x + 1].A) {
-            if (objCollection[x].C > objCollection[x + 1].C) {
-                let temp = objCollection[x];
-                objCollection[x] = objCollection[x + 1];
-                objCollection[x + 1] = temp;
+    //when add buttton clicked then animation and data in the row are deleted.
+    function deleteOther() {
+        $("#data").html(s);
+        $("#data_IO").html(s_IO);
+        $("#animateAll").html(s_animate);
+        makeHide();
+    }
+
+    //makevisible other column
+    function makeVisible() {
+        $(".ans").css("visibility", "visible");
+        $(".avg").css("visibility", "visible");
+    }
+
+    //Add process;
+    let lst=1;
+    $("#add").click(function () {
+        let n = $("#process").val();
+        deleteOther();
+        if(check==false){
+            for(let i = 1; i < n; i++) {
+                $("#data").append(s);
+                $("#data .cen").eq(i * 3).text(i);
+                lst=i+1;
+            }
+        }  
+        else
+        {
+            for(let i = 1; i < n; i++) {
+                $("#data_IO").append(s_IO);
+                $("#data_IO .cen").eq(i * 4).text(i);
+                lst=i+1;
             }
         }
-    }
-
-    for (var x = 0; x < objCollection.length; x++) {
-        //pushing to array AT and BT for later purposes.
-        AT.push(objCollection[x].A);
-        BT.push(objCollection[x].B);
-        PID.push(objCollection[x].C);
-
-        //calling these functions and store the values
-        completion = CT(BT[x]);
-        ct.push(completion);
-        turnaround = TT(completion, AT[x]);
-        tt.push(turnaround);
-        waiting = WT(turnaround, BT[x]);
-        wt.push(waiting);
-
-        //storing values in output string, AT and BT array are used.
-        output += `${x + 1}\t${AT[x]}\t${BT[x]}\t${completion}\t${turnaround}\t${waiting}\n`;
-
-        //pushing to array att and awt for later purposes.
-        att.push(turnaround);
-        awt.push(waiting);
-    }
-
-    //Passing att and awt arrays to these functions
-    output += `Average Turnaround Time: ${averageTT(att, objCollection.length)}\nAverage Waiting Time: ${averageWT(awt, objCollection.length)}`
-
-    // Backend Ends here
-
-    var finalAtt = averageTT(att, objCollection.length);
-    var finalAwt = averageWT(awt, objCollection.length);
-
-    document.getElementById("att").innerHTML = "Average Turn-around Time : " + finalAtt;
-    document.getElementById("awt").innerHTML = "Average Waiting Time : " + finalAwt;
-
-    var Table = document.getElementById("fcfsTable");
-    var rows = Table.querySelectorAll('tr');
-    for (let i = 1; i < rows.length; i++) {
-        rows[i].children[0].innerHTML = '<input id="pid' + i + '" placeholder="pid' + i + '" value=' + PID[i - 1] + '>';
-        rows[i].children[1].innerHTML = '<input id="at' + i + '" placeholder="at' + i + '" value=' + AT[i - 1] + '>';
-        rows[i].children[2].innerHTML = '<input id="bt' + i + '" placeholder="bt' + i + '" value=' + BT[i - 1] + '>';
-        rows[i].children[3].innerHTML = ct[i - 1];
-        rows[i].children[4].innerHTML = tt[i - 1];
-        rows[i].children[5].innerHTML = wt[i - 1];
-    }
-
-    google.charts.load('current', { 'packages': ['timeline'] });
-
-    const drawTimeLine = () => {
-        var container = document.getElementById('FCFStimeline');
-        var chart = new google.visualization.Timeline(container);
-        var dataTable = new google.visualization.DataTable();
-
-        dataTable.addColumn({ type: 'string', id: 'Process' });
-        dataTable.addColumn({ type: 'number', id: 'Start' });
-        dataTable.addColumn({ type: 'number', id: 'End' });
-
-        let arr = [];
-
-        for (let i = 1; i < rows.length; i++) {
-            // console.log(AT[i-1], wt[i-1]);
-            // console.log(ct[i-1]);
-            arr.push([
-                'P' + i,
-                (AT[i - 1] + wt[i - 1]) * 1000,
-                (ct[i - 1]) * 1000
-            ])
-        }
-
-        // dataTable.addColumn({ type: 'string', id: 'President' });
-        // dataTable.addColumn({ type: 'date', id: 'Start' });
-        // dataTable.addColumn({ type: 'date', id: 'End' });
-        // dataTable.addRows([
-        //   [ 'Washington', new Date(1789, 3, 30), new Date(1797, 2, 4) ],
-        //   [ 'Adams',      new Date(1797, 2, 4),  new Date(1801, 2, 4) ],
-        //   [ 'Jefferson',  new Date(1801, 2, 4),  new Date(1809, 2, 4) ]]);
-
-        dataTable.addRows(arr);
-        chart.draw(dataTable);
-    }
+    });
     
-    google.charts.setOnLoadCallback(drawTimeLine);
-    const drawGantt = () => {
-        var container = document.getElementById('FCFSgantt');
-        var chart = new google.visualization.Timeline(container);
-        var dataTable = new google.visualization.DataTable();
+    $("#add_row").click(function(){
+        let n=$("#process").val();
+        $("#process").val(parseInt(n)+1);
+        if(check==false){
+            $("#data").append(s);
+            $("#data .cen").eq(lst * 3).text(lst);
+        }
+        else
+        {
+            $("#data_IO").append(s_IO);
+            $("#data_IO .cen").eq(lst * 4).text(lst);
+        }
+        lst++;
+    });
 
-        dataTable.addColumn({ type: 'string', id: 'Position' });
-        dataTable.addColumn({ type: 'string', id: 'Process' });
-        dataTable.addColumn({ type: 'number', id: 'Start' });
-        dataTable.addColumn({ type: 'number', id: 'End' });
+    $("#delete_row").click(function(){
+        lst--;
+        if(lst<0)
+        {
+            lst=0;
+            return;
+        }
+        $("#process").val(lst);
+        if(check==false){
+            $("#data").children(".cen").eq(lst*3+2).remove();
+            $("#data").children(".cen").eq(lst*3+1).remove();
+            $("#data").children(".cen").eq(lst*3).remove();
+            $("#data").children(".ans").eq(lst*3+2).remove();
+            $("#data").children(".ans").eq(lst*3+1).remove();
+            $("#data").children(".ans").eq(lst*3).remove();
+        }
+        else
+        {
+            $("#data_IO").children(".cen").eq(lst*4+3).remove();
+            $("#data_IO").children(".cen").eq(lst*4+2).remove();
+            $("#data_IO").children(".cen").eq(lst*4+1).remove();
+            $("#data_IO").children(".cen").eq(lst*4).remove();
+            $("#data_IO").children(".ans").eq(lst*3+2).remove();
+            $("#data_IO").children(".ans").eq(lst*3+1).remove();
+            $("#data_IO").children(".ans").eq(lst*3).remove();
+        }
+    }); 
 
-        let arr = [];
 
-        for (let i = 1; i < rows.length; i++) {
-            // console.log(AT[i-1], wt[i-1]);
-            // console.log(ct[i-1]);
-            arr.push([
-                'Process',
-                'P' + i,
-                (AT[i - 1] + wt[i - 1]) * 1000,
-                (ct[i - 1]) * 1000
-            ])
+    //if input value of the Total IO will change then bt and io will be added in the burst time..
+    setInterval(function(){
+            for(let i=0;i<lst;i++)
+        {
+            // console.log("in",i);
+            $("#data_IO").children(".cen").eq(i*4+1).change(function(){
+                let t=$("#data_IO").children(".cen").eq(i*4+1).val();
+                console.log("t=",t);
+                $("#data_IO div").eq(i).html('<input type="number" class="cen_IO" placeholder="BT" style="width:60px;">');
+                for(let j=0;j<t;j++)
+                {
+                    $("#data_IO div").eq(i).append(burst_IO);
+                }
+            });
         }
 
-        // dataTable.addColumn({ type: 'string', id: 'President' });
-        // dataTable.addColumn({ type: 'date', id: 'Start' });
-        // dataTable.addColumn({ type: 'date', id: 'End' });
-        // dataTable.addRows([
-        //   [ 'Washington', new Date(1789, 3, 30), new Date(1797, 2, 4) ],
-        //   [ 'Adams',      new Date(1797, 2, 4),  new Date(1801, 2, 4) ],
-        //   [ 'Jefferson',  new Date(1801, 2, 4),  new Date(1809, 2, 4) ]]);
+    }, 1000);
 
-        dataTable.addRows(arr);
-        chart.draw(dataTable);
-    }
-    google.charts.setOnLoadCallback(drawGantt);
+    //Animation function
+    function fun_animation() 
+    {
+        let n = lst;
+        console.log(n);
+        let last = 0;
+        let i = -1;
+        for (let j = 0; j < n; j++) {
+            if (last < arrival_sort[j][0]) {
+                i++;
+                $("#animateAll").append(s_animate);
+                $(".animation").eq(i).css("visibility", "visible");
+                $(".animation").eq(i).text("");
+                $(".animation").eq(i).css("background-color", "black");
+                $(".animation").eq(i).css("color", "white");
+                $(".start").eq(i).text(last);
+                let cur = 50 * (arrival_sort[j][0] - last);
+                $(".animation").eq(i).animate({
+                    width: cur
+                }, 500);
+                last = arrival_sort[j][0];
+                j--;
+                continue;
+            }
+            let cur = 50 * burst[arrival_sort[j][1]];
+            i++;
+            $("#animateAll").append(s_animate);
+            $(".animation").eq(i).css("visibility", "visible");
+            $(".animation").eq(i).text("P" + arrival_sort[j][1]);
+            $(".start").eq(i).text(last);
 
-    return output;
-}
+            if (j % 2)
+                $(".animation").eq(i).css("background-color", "lightblue");
+            else 
+              $(".animation").eq(i).css("background-color", "red");
 
-//Calculating for completion time.
-function CT(bt) {
-    //qu must be globally scoped so that it starts initially at zero
-    //and incrementing it every function invocation.
-    qu += bt;
-    return qu;
-}
-
-//Calculating for turnaround time.
-function TT(ct, at) {
-    return ct - at;
-}
-
-//calculating for waiting time.
-function WT(tt, bt) {
-    return tt - bt;
-}
-
-//calculating the average turnaround time and average waiting time
-//using the reduce method to find the sum of its array and dividing
-//by the number of elements in the array.
-function averageTT(ttValues, noOfValues) {
-    return ttValues.reduce(function (total, num) {
-        return total + num;
-    }) / noOfValues;
-}
-
-function averageWT(wtValues, noOfValues) {
-    return wtValues.reduce(function (total, num) {
-        return total + num;
-    }) / noOfValues;
-}
-
-var FCFScounter = 2;
-function FCFSfn() {
-    let ptimes = [];
-    let atimes = [];
-    let btimes = [];
-    for (let i = 1; i < FCFScounter; i++) {
-        if (document.getElementById('at' + i) !== undefined && document.getElementById('bt' + i) !== undefined) {
-            // console.log(i);
-            ptimes.push(parseInt(document.getElementById("pid" + i).value));
-            atimes.push(parseInt(document.getElementById("at" + i).value));
-            btimes.push(parseInt(document.getElementById("bt" + i).value));
+            $(".animation").eq(i).animate({
+                width: cur
+            }, 1000);
+            last = Completion[arrival_sort[j][1]];
         }
+        i++;
+        $("#animateAll").append(s_animate);
+        $(".start").eq(i).text(last);
     }
-    qu = 0;
-    console.log(FCFS(ptimes, atimes, btimes));
-}
 
-function addFCFSRow() {
-    $('#fcfsTable').append('<tr><td><input type="number" disabled id="pid' + FCFScounter + '" placeholder="pid' + FCFScounter + '" value="' + FCFScounter + '"/></td><td><input type="number" id="at' + FCFScounter + '" placeholder="at' + FCFScounter + '" /></td><td><input type="number" id="bt' + FCFScounter + '" placeholder="bt' + FCFScounter + '" /></td><td></td><td></td><td></td></tr>');
-    FCFScounter += 1;
-}
 
-function deleteFCFSRow() {
-    var table = document.getElementById("fcfsTable");
-    var rowCount = table.rows.length;
-    if(rowCount > 2) {
-        table.deleteRow(rowCount - 1);
-        FCFScounter -= 1;
+    function select_process(cur,ready_queue)
+    {
+        let select=-1;
+        if(ready_queue.length==0)
+        {
+            return -2;   
+        }
+        let first=ready_queue.peek();
+        if(first[0]>cur)
+        {
+            return -1;
+        }
+        else
+        {
+            ready_queue.dequeue();
+            let ind=first[1];
+            let burst_cur=burst[ind][0];
+            if(burst[ind].length>1)
+                ready_queue.queue([cur+burst_cur+burst[ind][1],first[1]]);
+            burst[ind].shift();
+            burst[ind].shift();
+            first[0]=burst_cur;
+            select=first;
+        }
+        return select;
     }
-    else{
-        alert("Cannot delete row");
+
+
+    function fun_IO_animation()
+    {
+        let n = lst;
+        var ready_queue = new PriorityQueue({ comparator: function(a, b) { return a[0] - b[0]; }});
+        let last = 0;
+        let i = -1;
+        let j;
+        for(let i=0;i<arrival_sort.length;i++)
+        {
+            //we have pushed the (arrival_index,arrval_time) when it enters in the ready queue;
+            ready_queue.queue(arrival_sort[i]);
+        }
+        while (1) {
+            j=select_process(last,ready_queue);
+            console.log(j);
+            if(j==-2)
+            {
+                break;
+            }
+            else if (j==-1){
+                i++;
+                $("#animateAll").append(s_animate);
+                $(".animation").eq(i).css("visibility", "visible");
+                $(".animation").eq(i).text("Waste");
+                $(".animation").eq(i).css("background-color", "black");
+                $(".animation").eq(i).css("color", "white");
+                $(".start").eq(i).text(last);
+                let next_arrive=ready_queue.peek();
+                let cur = 50 * (next_arrive[0] - last);
+                $(".animation").eq(i).animate({
+                    width: cur
+                }, 500);
+                last = next_arrive[0];
+                continue;
+            }
+            let cur = 50 * j[0];
+            i++;
+            $("#animateAll").append(s_animate);
+            $(".animation").eq(i).css("visibility", "visible");
+            $(".animation").eq(i).text("P" + j[1]);
+            $(".start").eq(i).text(last);
+
+            if (i % 2)
+                $(".animation").eq(i).css("background-color", "lightblue");
+            else
+                $(".animation").eq(i).css("background-color", "red");
+
+            $(".animation").eq(i).animate({
+                width: cur
+            }, 1000);
+            last = last + j[0];
+            //console.log("j[1]=",j[1]);
+            if(burst[j[1]].length==0)
+                Completion[j[1]]=last;
+        }
+        i++;
+        $("#animateAll").append(s_animate);
+        $(".start").eq(i).text(last);
     }
-}
+
+    //algorithm
+    $("#compute").click(function () {
+        
+        makeAnimationHide();
+
+        let n = lst;
+        //console.log(n);
+        let total_Burst=[];
+        if(check==false)
+        {   
+            let texts = $("#data .cen").map(function () {
+                return $(this).val();
+            }).get();
+            console.log(texts);
+
+            arrival.length = 0;
+            burst.length = 0;
+            arrival_sort.length=0;
+
+            for (let i = 0; i < texts.length; i++) {
+                if (i % 3 == 0)
+                    continue;
+                else if (i % 3 == 1) {
+                    if (texts[i] == "") {
+                        alert("Enter number");
+                        makeHide();
+                        return;
+                    }
+                    arrival.push(parseInt(texts[i]));
+                    arrival_sort.push([parseInt(texts[i]),arrival_sort.length]);
+                }
+                else {
+                    if (texts[i] == "") {
+                        alert("Enter number");
+                        makeHide();
+                        return;
+                    }
+                    burst.push(parseInt(texts[i]));
+                }
+            }
+        }
+        else
+        {
+            let texts = $("#data_IO .cen").map(function () {
+                return $(this).val();
+            }).get();
+            let allBT=$("#data_IO .cen_IO").map(function () {
+                return $(this).val();
+            }).get();
+
+            console.log(texts);
+
+            arrival.length = 0;
+            burst.length = 0;
+            arrival_sort.length=0;
+            IO_time.length=0;
+            let index=-1;
+            for (let i = 0; i < texts.length; i++) {
+                if (i % 4 == 0)
+                    continue;
+                else if (i % 4 == 1) {
+                    if (texts[i] == "") {
+                        alert("Enter number");
+                        makeHide();
+                        return;
+                    }
+                IO_time.push(parseInt(texts[i]));
+                }
+                else if(i%4==2){
+                    if (texts[i] == "") {
+                        alert("Enter number");
+                        makeHide();
+                        return;
+                    }
+                    arrival.push(parseInt(texts[i]));
+                    arrival_sort.push([parseInt(texts[i]),arrival_sort.length]);
+                }
+                else
+                {
+                    let array=[];
+                    index++;
+                    let b=0;
+                    array.push(parseInt(allBT[index]));
+                    b+=parseInt(allBT[index]);
+                    if(IO_time[IO_time.length-1]>0)
+                    {
+                        for(let j=0;j<IO_time[IO_time.length-1];j++)
+                        {
+                            index++;
+                            array.push(parseInt(allBT[index]));
+                            index++;
+                            array.push(parseInt(allBT[index]));
+                            b+=parseInt(allBT[index]);
+                        }
+                    }
+                    console.log(array);
+                    burst.push(array);
+                    total_Burst.push(b);
+                }
+            }
+        }
+        // console.log(process);
+        console.log(arrival);
+        console.log(burst);
+        Completion.length = n;
+        wt.length = n;
+        tat.length = n;
+        let count = 0, last = 0;
+
+        arrival_sort = arrival_sort.sort(function (a, b) {  return a[0] - b[0]; });
+        // consol.log(arrival_sort.sort());
+        console.log(arrival_sort);
+        //compute Completion time
+        if(check==false){
+            while (count < n) {
+                if (last >= arrival_sort[count][0])
+                    Completion[arrival_sort[count][1]] = last + burst[arrival_sort[count][1]];
+                else {
+                    last = arrival_sort[count][0];
+                    Completion[arrival_sort[count][1]] = last + burst[arrival_sort[count][1]];
+                }
+                last = Completion[arrival_sort[count][1]];
+                count++;
+            }
+        }
+        else
+        {
+            fun_IO_animation();
+        }
+        count = 0;
+        //compute Turn Around Time and Waiting Time
+        if(check==true)
+        {
+            while (count < n) {
+                tat[count] = Completion[count] - arrival[count];
+                wt[count] = tat[count] - total_Burst[count];
+                count++;
+            }    
+        }
+        else
+        {
+            while (count < n) {
+                tat[count] = Completion[count] - arrival[count];
+                wt[count] = tat[count] - burst[count];
+                count++;
+            }
+        }
+
+        console.log(Completion);
+        console.log(tat);
+        console.log(wt);
+        
+        //give value to our html table
+        var avg_tat=0,avg_wat=0;
+        if(check==false){
+            for (let i = 0, j = 0; i < 3 * n; i += 3, j++) {
+                $("#data .ans").eq(i).text(Completion[j]);
+                $("#data .ans").eq(i + 1).text(tat[j]);
+                $("#data .ans").eq(i + 2).text(wt[j]);
+                avg_tat+=tat[j];
+                avg_wat+=wt[j];
+            }
+        }
+        else
+        {
+            for(let i = 0, j = 0; i < 3 * n; i += 3, j++) {
+                $("#data_IO .ans").eq(i).text(Completion[j]);
+                $("#data_IO .ans").eq(i + 1).text(tat[j]);
+                $("#data_IO .ans").eq(i + 2).text(wt[j]);
+                avg_tat+=tat[j];
+                avg_wat+=wt[j];
+            }
+        }
+
+        $("#avg_tat").text(Math.round(avg_tat/n*100)/100);
+        $("#avg_wat").text(Math.round(avg_wat/n*100)/100);
+
+        makeVisible();
+
+        if(check==false)
+            fun_animation();
+
+    });
+
+    function makeAnimationHide()
+    {
+        $(".animation").css("width", 0);
+        $(".animation").css("color", "black");
+        $(".animation").text("");
+        $(".start").text("");
+    }
+    //this function make hide and give the text to null
+    function makeHide() {
+        $(".cen").val("");
+        $(".ans").css("visibility", "hidden");
+        $(".avg").css("visibility", "hidden");
+        makeAnimationHide();
+        // $(".animation").css("visibility","hidden");
+    }
+
+    //reset the button
+    $("#reset").click(makeHide);
+    
+});

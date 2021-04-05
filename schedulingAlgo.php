@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <?php
     $title_1 = "Scheduling";
     $title_2 = "Algorithms";
@@ -73,10 +72,9 @@
        
         ";
 
-        include "algoContent.php";
-        ?>
+        include "algoContent.php"; ?>
         <br><br>
-        <?php include "fcfs.php"; ?>
+        <?php include "FCFS.php"; ?>
         <br><br>
     </div>
     <div id="sjf" class="tab-view">

@@ -2,62 +2,87 @@
 <html lang="en">
 
 <head>
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
-    <link rel="stylesheet" href="./css/algo.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>SA | FCFS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First come first serve</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/demo.css">
+    <link rel="stylesheet" href="./css/respo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="main">
-        <div class="table-con">
-            <div class="table">
-                <table id="fcfsTable" class="nameTable">
-                    <tr>
-                        <th>Process ID</th>
-                        <th>Arrival Time</th>
-                        <th>Burst Time</th>
-                        <th>Completion Time</th>
-                        <th>Turn Around Time</th>
-                        <th>Waiting Time</th>
-                    </tr>
-                    <tr>
-                        <td><input type="number" id="pid1" placeholder="pid1" value="1" disabled></td>
-                        <td><input type="number" id="at1" placeholder="at1"></td>
-                        <td><input type="number" id="bt1" placeholder="bt1"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+    <section class="sa-algo-container">
+        <div id="sa-containers">
+            <div id="container">
+                <div class="item">P No.</div>
+                <div class="item">Arrival time</div>
+                <div class="item">Burst time</div>
+
+                <div class="item ans">Completion Time</div>
+                <div class="item ans">Turn Around Time</div>
+                <div class="item ans">Waiting Time</div>
             </div>
-            <div class='table-action-grp'>
-                <div><button onclick="addFCFSRow()">
-                        <div><i class="fas fa-plus-circle"></i></div>
-                        <div>Add Row</div>
-                    </button></div>
-                <div><button id='deleteBtn' onclick="deleteFCFSRow()">
-                        <i class="fas fa-times"></i>
-                    </button></div>
+
+            <div id="container_IO">
+                <div class="item">P No.</div>
+                <div class="item">Total IO</div>
+                <div class="item">Arrival time</div>
+                <div class="item">Burst time</div>
+
+                <div class="item ans">Completion Time</div>
+                <div class="item ans">Turn Around Time</div>
+                <div class="item ans">Waiting Time</div>
             </div>
-            <div class='submit-div'>
-                <button onclick="FCFSfn()" id="btnFcfs" class="submit-btn">
-                    Submit
-                </button>
+            
+            <div id="data">
+                <label class="cen">0</label>
+                <input type="number" class="cen">
+                <input type="number" class="cen">
+                <label class="ans"></label>
+                <label class="ans"></label>
+                <label class="ans"></label>
             </div>
-            <div class="avg">
-                <div id="att"> </div><br />
-                <div id="awt"> </div>
+
+            <div id="data_IO">
+                <label class="cen">0</label>
+                <input type="number" class="cen">
+                <input type="number" class="cen">
+                <div class="cen" style="overflow: auto;">
+                    <input type="number" class="cen_IO" placeholder="BT" style="width:60px;">
+                </div>
+                <label class="ans"></label>
+                <label class="ans"></label>
+                <label class="ans"></label>
             </div>
+            <br>
+            <button id="add_row" class="btn">Add Row</button>
+            <button id="delete_row" class="btn">Delete Row</button>
+            <button id="compute" class="btn">Compute</button>
+            <button id="reset" class="btn">Reset</button>
+            <br><br>
+
+            <!-- <button id="animate" class="btn">Animate</button> -->
+
+            <div class="avg black-text">
+                <span class="b">Average Turn Around Time </span>
+                <label class="a" id="avg_tat"></label>
+                <span class="b">Average Waiting Time </span>
+                <label class="a" id="avg_wat"></label>
+            </div>
+
+            <div id="animateAll">
+                <label class="start"></label>
+                <div class="animation black-text">
+                    <label class="process_animate">p0</label>
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <div id="FCFStimeline" style="height: max-content"></div>
-    <div id="FCFSgantt" style="height: max-content;"></div>
-
-    <script src='./js/fcfs.js'></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>
+    </section>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="module" src="./js/fcfs.js"></script>
+<script src="./js/priority-queue.js"></script>
 
 </html>
