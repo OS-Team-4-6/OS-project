@@ -109,7 +109,7 @@
 
         include "algoContent.php"; ?>
         <br><br>
-        <?php include "sjf.php"; ?>
+        <?php include "SJF.php"; ?>
         <br><br>
     </div>
     <div id="ljf" class="tab-view">
