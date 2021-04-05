@@ -1,10 +1,10 @@
-#container, #sjf-container {
+#container, #sjf-container, #ljf-container, #rr-container, #lrtf-container, #srtf-container, #pr-container {
     display: grid;
     grid-template-columns: 120px 245px 245px 245px 245px 245px;
     color: var(--black-color);
 }
 
-#animateAll, #sjf-animateAll {
+#animateAll, #sjf-animateAll, #ljf-animateAll, #rr-animateAll, #lrtf-animateAll, #srtf-animateAll, #pr-animateAll{
     display: flex;
     /* flex-wrap: wrap; */
 }
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-#data, #sjf-data {
+#data, #sjf-data, #ljf-data, #rr-data, #lrtf-data, #srtf-data, #pr-data{
     display: grid;
     grid-template-columns: 120px 245px 245px 245px 245px 245px;
     color: var(--black-color);
@@ -136,12 +136,12 @@
 
 /* WITH IO */
 
-#container_IO, #sjf-container_IO {
+#container_IO, #sjf-container_IO, #ljf-container_IO, #rr-container_IO, #lrtf-container_IO, #srtf-container_IO, #pr-container_IO{
     display: none;
     grid-template-columns: 120px 100px 200px 300px 200px 200px 200px;
 }
 
-#data_IO, #sjf-data_IO {
+#data_IO, #sjf-data_IO, #ljf-data_IO, #rr-data_IO, #lrtf-data_IO, #srtf-data_IO, #pr-data_IO {
     display: none;
     grid-template-columns: 120px 100px 200px 300px 200px 200px 200px;
 }
