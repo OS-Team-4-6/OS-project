@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/person-card.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/person-card.css">
     <title>Homepage</title>
 
     <style>
@@ -42,7 +42,7 @@
         $title_1 = "OS";
         $title_2 = "Virtual Lab";
         $main_desc = "The OS Virtual Lab contains a combination of various Operating System algorithms. It is comprised of 4 componenets namely 'Disk Shcheduling Algorithm','Shcheduling Algorithm', 'Page Replacement Algorithm' and 'Concurrency and Deadlock'. The lab is designed to provide a user friendly interface. It focuses on providing the user knowledge about OS algorithms along with their implementation. The objective of this lab is to help the users understand the internal working of an operating system via onine platform.";
-        include 'header.php'; 
+        include './components/header.php'; 
     ?>
 
     <section class="person-cards">

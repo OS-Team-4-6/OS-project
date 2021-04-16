@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/algoContent.css" />
-    <link rel="stylesheet" href="./css/tabs.css" />
-    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/algoContent.css" />
+    <link rel="stylesheet" href="./assets/css/tabs.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
     <title>Page Replacement Algorithms</title>
-    <script src="./js/tabs.js"></script>
+    <script src="./assets/js/tabs.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     $title_2 = "Algorithms";
     $main_desc = "In a computer operating system that uses paging for virtual memory management, page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to disk, when a page of memory needs to be allocated. Page replacement happens when a requested page is not in memory (page fault) and a free page cannot be used to satisfy the allocation, either because there are none, or because the number of free pages is lower than some threshold.";
 
-    include "header.php";
+    include "./components/header.php";
     ?>
 
     <div class="tabs-container flex-layout ">
@@ -61,10 +61,10 @@
         System needs to keep track of each frame.
        ";
 
-        include "algoContent.php";
+        include "./components/algoContent.php";
         ?>
         <br><br>
-        <?php include "fifo.php"; ?>
+        <?php include "./pageReplacementAlgo/fifo.php"; ?>
         <br><br>
     </div>
     <div id="belady" class="tab-view">
@@ -82,10 +82,10 @@ Random page replacement algorithm ";
         $algoAdv = "";
         $algoDisAdv = "";
 
-        include "algoContent.php";
+        include "./components/algoContent.php";
         ?>
         <br><br>
-        <?php include "belady.php"; ?>
+        <?php include "./pageReplacementAlgo/belady.php"; ?>
     </div>
     <div id="lifo" class="tab-view">
         <div class="page-heading flex-layout justify-center items-center text-uppercase white-text">
@@ -100,10 +100,10 @@ Random page replacement algorithm ";
         $algoDisAdv = "Can seem a little unfair to other requests and if new requests keep coming in, it cause starvation to the      
         old and existing ones.";
 
-        include "algoContent.php";
+        include "./components/algoContent.php";
         ?>
         <br><br>
-        <?php include "lifo.php"; ?>
+        <?php include "./pageReplacementAlgo/lifo.php"; ?>
         <br><br>
 
     </div>
@@ -125,10 +125,10 @@ Random page replacement algorithm ";
         Hardware assistance is high.<br>
         Performance tends to degenerate under many quite common reference patterns.";
 
-        include "algoContent.php";
+        include "./components/algoContent.php";
         ?>
         <br><br>
-        <?php include "lru.php"; ?>
+        <?php include "./pageReplacementAlgo/lru.php"; ?>
         <br><br>
     </div>
     <div id="optimal" class="tab-view">
@@ -148,10 +148,10 @@ Random page replacement algorithm ";
         Error handling is tough.
         ";
 
-        include "algoContent.php";
+        include "./components/algoContent.php";
         ?>
         <br><br>
-        <?php include "optimal.php"; ?>
+        <?php include "./pageReplacementAlgo/optimal.php"; ?>
         <br><br>
     </div>
     <div id="random" class="tab-view">
@@ -167,10 +167,10 @@ Random page replacement algorithm ";
 ";
         $algoDisAdv = "It can easily make bad choices by swapping out pages right before they are needed.<br>Random page replacement algorithm suffers from belady’s anomaly which results in increasing number of page faults";
 
-        include "algoContent.php";
+        include "./components/algoContent.php";
         ?>
         <br><br>
-        <?php include "random.php"; ?>
+        <?php include "./pageReplacementAlgo/random.php"; ?>
         <br><br>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

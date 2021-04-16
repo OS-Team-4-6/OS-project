@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/Main.css" />
+        <link rel="stylesheet" href="./assets/css/Main.css" />
         <!-- <title>Disk Scheduling Algorithms</title> -->
     </head>
 
@@ -31,7 +31,7 @@
                             regular na modelo simula pa noong 1500s, noong may isang di kilalang manlilimbag and kumuha ng galley ng type at
                             ginulo ang pagkaka-ayos nito upang makagawa ng libro ng mga type specimen. Nalagpasan nito hindi lang limang siglo, kundi nalagpasan din
                             nito ang paglaganap ng electronic typesettin?";
-        include "header.php"; 
+        include "./components/header.php"; 
     ?>
     <div class="tabs-container" id="tbs">
         <a class="tab" href="#tab-FCFS">FCFS</a>
@@ -97,7 +97,7 @@
 
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'FCFSform.php'; ?>
+                    <?php include './diskSchedulingAlgo/FCFSform.php'; ?>
                 </div>
             </div>
         </section>
@@ -157,7 +157,7 @@
 
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'SSTFform.php'; ?>
+                    <?php include './diskSchedulingAlgo/SSTFform.php'; ?>
                 </div>
             </div>
         </section>
@@ -221,7 +221,7 @@
 
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'Scanform.php'; ?>
+                    <?php include './diskSchedulingAlgo/Scanform.php'; ?>
                 </div>
             </div>
         </section>
@@ -286,7 +286,7 @@
 
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'Cscanform.php'; ?>
+                    <?php include './diskSchedulingAlgo/Cscanform.php'; ?>
                 </div>
             </div>
         </section>
@@ -356,7 +356,7 @@
 
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'Lookform.php'; ?>
+                    <?php include './diskSchedulingAlgo/Lookform.php'; ?>
                 </div>
             </div>
         </section>
@@ -428,7 +428,7 @@
 
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'CLookform.php'; ?>
+                    <?php include './diskSchedulingAlgo/CLookform.php'; ?>
                 </div>
             </div>
         </section>
@@ -469,7 +469,7 @@
                 </div>
                 <div class='practical'>
                     <h2><u> Experiment</u></h2>
-                    <?php include 'BestOneForm.php'; ?>
+                    <?php include './diskSchedulingAlgo/BestOneForm.php'; ?>
                 </div>
             </div>
         </section>
@@ -477,7 +477,7 @@
     <div id="FrontPage-container"></div>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="./js/tab.js"></script>
+    <script src="./assets/js/tab.js"></script>
     <script src="https://kit.fontawesome.com/e2bbc75ec5.js" crossorigin="anonymous"></script>
     <script>
     function nextOne() {
@@ -541,5 +541,4 @@
     }
     </script>
     </body>
-
 </html>

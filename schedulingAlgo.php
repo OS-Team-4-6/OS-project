@@ -5,13 +5,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="stylesheet" href="./css/algo.css">
-        <link rel="stylesheet" href="./css/algoContent.css" />
-        <link rel="stylesheet" href="./css/tabs.css" />
-        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/algo.css">
+        <link rel="stylesheet" href="./assets/css/algoContent.css" />
+        <link rel="stylesheet" href="./assets/css/tabs.css" />
+        <link rel="stylesheet" href="./assets/css/header.css" />
         <title>Scheduling Algorithms</title>
-        <script src="./js/tabs.js"></script>
+        <script src="./assets/js/tabs.js"></script>
     </head>
 
     <body>
@@ -20,7 +20,7 @@
     $title_2 = "Algorithms";
     $main_desc = "CPU Scheduling is a process of determining which process will own CPU for execution while another process is on hold. The main task of CPU scheduling is to make sure that whenever the CPU remains idle, the OS at least select one of the processes available in the ready queue for execution. The selection process will be carried out by the CPU scheduler.It selects one of the processes in memory that are ready for execution.";
 
-    include "header.php";
+    include "./components/header.php";
     ?>
 
         <div class="tabs-container flex-layout ">
@@ -72,9 +72,9 @@
        
         ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "FCFS.php"; ?>
+            <?php include "./schedulingAlgo/FCFS.php"; ?>
             <br><br>
         </div>
         <div id="sjf" class="tab-view">
@@ -107,9 +107,9 @@
         
         ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "SJF.php"; ?>
+            <?php include "./schedulingAlgo/SJF.php"; ?>
             <br><br>
         </div>
         <div id="ljf" class="tab-view">
@@ -129,9 +129,9 @@
         Processes with smaller burst time may starve for CPU.
        ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "ljf.php"; ?>
+            <?php include "./schedulingAlgo/ljf.php"; ?>
             <br><br>
         </div>
         <div id="rr" class="tab-view">
@@ -156,9 +156,9 @@
        Average waiting time under the RR policy is often long.
        ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "rr.php"; ?>
+            <?php include "./schedulingAlgo/rr.php"; ?>
             <br><br>
         </div>
         <div id="lrtf" class="tab-view">
@@ -179,9 +179,9 @@
         Smaller processes need to wait for CPU to finish larger burst size processes.
         ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "lrtf.php"; ?>
+            <?php include "./schedulingAlgo/lrtf.php"; ?>
             <br><br>
         </div>
         <div id="srtf" class="tab-view">
@@ -202,9 +202,9 @@
          
         ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "srtf.php"; ?>
+            <?php include "./schedulingAlgo/srtf.php"; ?>
             <br><br>
         </div>
         <div id="priority" class="tab-view">
@@ -224,9 +224,9 @@
         If high priority processes take lots of CPU time, then the lower priority processes may starve and will be postponed for an indefinite time.
         ";
 
-        include "algoContent.php"; ?>
+        include "./components/algoContent.php"; ?>
             <br><br>
-            <?php include "pr.php"; ?>
+            <?php include "./schedulingAlgo/pr.php"; ?>
             <br><br>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
