@@ -1,5 +1,5 @@
 # OS Virtual Lab
-This is an Operating System Virtual Lba. Here you'll be able to visualise and know how processes in your computers actually work.
+This is an Operating System Virtual Lab. Here you'll be able to visualise and know how processes in your computers actually work.
 
 # Lab Layout:
 This visualiser is divided into __3 modules__:
